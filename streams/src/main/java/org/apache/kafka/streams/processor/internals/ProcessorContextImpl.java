@@ -211,6 +211,12 @@ public class ProcessorContextImpl implements ProcessorContext, RecordCollector.S
     }
 
     @Override
+    public void schedule(long start, long interval) {
+        task.schedule(start, interval);
+    }
+
+
+    @Override
     public Map<String, Object> appConfigs() {
         return config.originals();
     }
