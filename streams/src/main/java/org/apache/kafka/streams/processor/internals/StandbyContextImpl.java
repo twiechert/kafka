@@ -193,6 +193,12 @@ public class StandbyContextImpl implements ProcessorContext, RecordCollector.Sup
     }
 
     @Override
+    public void schedule(long start, long interval) {
+        throw new UnsupportedOperationException("this should not happen: schedule() not supported in standby tasks.");
+
+    }
+
+    @Override
     public Map<String, Object> appConfigs() {
         return config.originals();
     }
