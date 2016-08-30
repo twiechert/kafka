@@ -23,6 +23,8 @@ import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.processor.ProcessorSupplier;
 import org.apache.kafka.streams.processor.StreamPartitioner;
 
+import java.util.Set;
+
 /**
  * {@link KStream} is an abstraction of a <i>record stream</i> of key-value pairs.
  * <p>
@@ -617,4 +619,8 @@ public interface KStream<K, V> {
     KGroupedStream<K, V> groupByKey(Serde<K> keySerde,
                                     Serde<V> valSerde);
 
+
+    String getName();
+
+    Set<String> getSourceNodes();
 }
