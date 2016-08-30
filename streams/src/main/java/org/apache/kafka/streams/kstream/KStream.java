@@ -23,6 +23,8 @@ import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.processor.ProcessorSupplier;
 import org.apache.kafka.streams.processor.StreamPartitioner;
 
+import java.util.Set;
+
 /**
  * {@link KStream} is an abstraction of a <i>record stream</i> of key-value pairs.
  * <p>
@@ -635,5 +637,10 @@ public interface KStream<K, V> {
      * @return a {@link KTable} that contains records with unmodified keys and values that represent the latest (rolling) count (i.e., number of records) for each key
      */
     KTable<K, Long> countByKey(String name);
+
+
+    String getName();
+
+    Set<String> getSourceNodes();
 
 }

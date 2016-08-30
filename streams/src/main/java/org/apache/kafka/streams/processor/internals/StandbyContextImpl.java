@@ -188,4 +188,9 @@ public class StandbyContextImpl implements ProcessorContext, RecordCollector.Sup
     public void schedule(long interval) {
         throw new UnsupportedOperationException("this should not happen: schedule() not supported in standby tasks.");
     }
+
+    @Override
+    public void schedule(long interval, long interval2) {
+        throw new UnsupportedOperationException("this should not happen: schedule() not supported in standby tasks.");
+    }
 }

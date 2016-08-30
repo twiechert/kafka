@@ -95,6 +95,8 @@ public interface ProcessorContext {
      */
     void schedule(long interval);
 
+     void schedule(long start, long interval);
+
     /**
      * Forwards a key/value pair to the downstream processors
      * @param key key

@@ -297,6 +297,14 @@ public class StreamTask extends AbstractTask implements Punctuator {
         punctuationQueue.schedule(new PunctuationSchedule(currNode, interval));
     }
 
+    public void schedule(long start, long interval) {
+        if (currNode == null)
+            throw new IllegalStateException("Current node is null");
+
+        punctuationQueue.schedule(new PunctuationSchedule(currNode, start, interval));
+    }
+
+
     /**
      * @throws RuntimeException if an error happens during closing of processor nodes
      */

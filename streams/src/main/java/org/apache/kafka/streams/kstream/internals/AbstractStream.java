@@ -70,4 +70,11 @@ public abstract class AbstractStream<K> {
         };
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Set<String> getSourceNodes() {
+        return sourceNodes;
+    }
 }

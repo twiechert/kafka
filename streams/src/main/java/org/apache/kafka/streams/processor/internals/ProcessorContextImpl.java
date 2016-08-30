@@ -206,4 +206,11 @@ public class ProcessorContextImpl implements ProcessorContext, RecordCollector.S
     public void schedule(long interval) {
         task.schedule(interval);
     }
+
+
+    @Override
+    public void schedule(long start, long interval) {
+        task.schedule(start, interval);
+    }
+
 }

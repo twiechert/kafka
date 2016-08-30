@@ -23,6 +23,8 @@ import org.apache.kafka.streams.KeyValue;
 import org.apache.kafka.streams.processor.StreamPartitioner;
 import org.apache.kafka.clients.producer.internals.DefaultPartitioner;
 
+import java.util.Set;
+
 /**
  * {@link KTable} is an abstraction of a <i>changelog stream</i> from a primary-keyed table.
  * Each record in this stream is an update on the primary-keyed table with the record key as the primary key.
@@ -316,4 +318,9 @@ public interface KTable<K, V> {
      * @param action an action to perform on each element
      */
     void foreach(ForeachAction<K, V> action);
+
+
+    String getName();
+
+    Set<String> getSourceNodes();
 }
