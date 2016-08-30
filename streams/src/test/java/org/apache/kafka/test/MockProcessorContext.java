@@ -85,6 +85,7 @@ public class MockProcessorContext implements ProcessorContext, RecordCollector.S
         return recordCollector;
     }
 
+
     public void setTime(long timestamp) {
         this.timestamp = timestamp;
     }
@@ -143,6 +144,12 @@ public class MockProcessorContext implements ProcessorContext, RecordCollector.S
 
     @Override
     public void schedule(long interval) {
+        throw new UnsupportedOperationException("schedule() not supported.");
+    }
+
+
+    @Override
+    public void schedule(long interval, long interval) {
         throw new UnsupportedOperationException("schedule() not supported.");
     }
 
@@ -209,4 +216,6 @@ public class MockProcessorContext implements ProcessorContext, RecordCollector.S
             restoreCallback.restore(entry.key, entry.value);
         }
     }
+
+
 }
